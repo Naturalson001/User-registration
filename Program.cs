@@ -42,7 +42,6 @@ class Program
             Console.Write("Enter your Password: ");
             string password = Console.ReadLine();
             string hashedPassword = HashPassword(password);
-
             userData.Add("Password", hashedPassword);
 
 
@@ -94,14 +93,11 @@ class Program
         Console.Read();
     }
 
-   
-  
 
         public void ConfigureServices(IServiceCollection services)
             => services.AddDbContext<ApplicationDbContext>();
 
   
-
     static string  HashPassword(string password)
     {
         byte[] salt = new byte[16];
@@ -116,7 +112,6 @@ class Program
 
         return Convert.ToBase64String(hashBytes);
 
-
     }
 
     static void RegisterUser(Dictionary<string, string> userData, string connectionString)
@@ -129,7 +124,6 @@ class Program
             Email = userData["Email"],
             hashedPassword = userData["Password"],
             PhoneNumber = userData["PhoneNumber"]
-
         };
 
     }
