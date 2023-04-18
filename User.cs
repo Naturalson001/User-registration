@@ -7,7 +7,7 @@ namespace User_Registration.Data
 {
     [Index(nameof(User.Email), IsUnique = true)]
     public class User
-	{
+    {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
@@ -23,15 +23,15 @@ namespace User_Registration.Data
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Password is required.")]
-        public string Password { get; set; }
+        public string hashedPassword { get; set; }
 
         [Required(ErrorMessage = "Phone Number is required.")]
         [Phone(ErrorMessage = "Invalid phone number format.")]
         public string PhoneNumber { get; set; }
-
-
-
     }
+
+
+    
 
 
 }
