@@ -55,7 +55,7 @@ class Program
             string valueList = string.Join(", ", values.Select(v => $"'{v}'"));
             string query = string.Format("INSERT INTO {0} ({1}) VALUES ({2})", tableName, columnList, valueList);
 
-            string connectionString = @"server=localhost;uid=root;pwd=Ayevbosaimade1;database=Project;";
+            string connectionString = @"server=localhost;uid=root;pwd=unknown<;database=Project;";
             MySqlConnection connection = new MySqlConnection(connectionString);
 
             MySqlCommand command = new MySqlCommand(query, connection);
